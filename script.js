@@ -4,9 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const iconCart = document.querySelector('.icon-cart');
   const closeCart = document.querySelector('.close');
   const body = document.querySelector('body');
+  body.classList.remove('showCart')
 const listProductHTML = document.querySelector('.listCart');
+const wishList  = document.querySelector('wishList')
 
   const checkOutBtn = document.querySelector('.checkout');
+  const darkMode = document.querySelector('#dark-mode');
+  let toggle = document.querySelector('.toggle');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('switch')
+
+     document.body.classList.toggle('dark')
+  })
+
+  document.getElementById("wishList").addEventListener("click", () => {
+  window.location.href = "wishlist.html";
+});
+
+
+
 
   let listProducts = [
     {
@@ -24,6 +41,7 @@ const listProductHTML = document.querySelector('.listCart');
 
   iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
+
   });
 
   closeCart.addEventListener('click', () => {
